@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 class UserLogin with ChangeNotifier {
   String _user;
   String _pass;
-  bool _result = false;
+  bool _result;
 
   String get user => _user;
 
@@ -77,9 +77,12 @@ class ResultWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<UserLogin>(builder: (context, userLogin, _) {
+      final resultWidget = (userLogin.result != null)
+          ? Text("Result: " + (userLogin.result ? "OK" : "WRONG"))
+          : Text("");
       return Padding(
         padding: const EdgeInsets.only(top: 12.0),
-        child: Text("Result: " + (userLogin.result ? "OK" : "WRONG")),
+        child: resultWidget,
       );
     });
   }
@@ -88,6 +91,12 @@ class ResultWidget extends StatelessWidget {
 class ProgressWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text("");
+    final userLogin = Provider.of<UserLogin>(context);
+    String log = "";
+    if (userLogin.user != null &&
+        userLogin.user.isNotEmpty &&
+        userLogin.pass != null &&
+        userLogin.pass.isNotEmpty) log = "Logging in: ${userLogin.user}";
+    return Text(log);
   }
 }
