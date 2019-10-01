@@ -84,10 +84,14 @@ class ResultWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 12.0),
-      child: Text("Result: " + "OK"),
-    );
+    return Consumer<UserLogin>(
+        builder: (context, userLogin, _) {
+          return
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: Text("Result: " + (userLogin.result ? "OK" : "WRONG")),
+            );
+        });
   }
 }
 
