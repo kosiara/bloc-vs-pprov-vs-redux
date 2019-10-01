@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch/common/widget/widget_form.dart';
-import 'package:flutter_arch/common/widget/widget_signin_btn.dart';
+import 'package:flutter_arch/common/widget/widget_form_login.dart';
 import 'package:provider/provider.dart';
 
 // 0: create model class which extends ChangeNotifier
@@ -47,27 +46,9 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[LoginWidget(), ResultWidget(), ProgressWidget()],
+            children: <Widget>[LoginFormWidget(), ResultWidget(), ProgressWidget()],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class LoginWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 30.0, right: 30),
-      child: Column(
-        children: <Widget>[
-          FormContainer(),
-          Padding(
-            padding: const EdgeInsets.only(top: 25.0),
-            child: SignInButton(),
-          )
-        ],
       ),
     );
   }

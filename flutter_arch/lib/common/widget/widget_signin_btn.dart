@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// source: https://flutterawesome.com/a-new-open-source-flutter-login-home-animation/
 class SignInButton extends StatelessWidget {
   SignInButton();
 
