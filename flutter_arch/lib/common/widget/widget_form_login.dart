@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_arch/common/widget/widget_container_form.dart';
 import 'package:flutter_arch/common/widget/widget_signin_btn.dart';
+import 'package:flutter_arch/provider_examp.dart';
+import 'package:provider/provider.dart';
 
 class LoginFormWidget extends StatefulWidget {
   @override
@@ -35,6 +37,9 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
   }
 
   void onSignIn() {
-     print("Clicked");
+    final userLogin = Provider.of<UserLogin>(context);
+    userLogin.checkCredentials(
+        userTxtController.value.text, passTxtController.value.text);
+    print("Sign-in clicked");
   }
 }

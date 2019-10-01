@@ -18,8 +18,12 @@ class UserLogin with ChangeNotifier {
     _user = user;
     _pass = password;
 
-    // implement user/pass check
-    _result = true;
+    if (user != null && user.isNotEmpty && password != null && password.isNotEmpty) {
+      _result = true;
+      // user/pass check goes here
+    } else
+      _result = false;
+
     notifyListeners();
   }
 }
@@ -74,10 +78,8 @@ class ProgressWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final userLogin = Provider.of<UserLogin>(context);
     String log = "";
-    if (userLogin.user != null &&
-        userLogin.user.isNotEmpty &&
-        userLogin.pass != null &&
-        userLogin.pass.isNotEmpty) log = "Logging in: ${userLogin.user}";
+    if (userLogin.result != null && userLogin.result)
+      log = "Logging in: ${userLogin.user}";
     return Text(log);
   }
 }
