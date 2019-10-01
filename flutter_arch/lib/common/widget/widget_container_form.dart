@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 // source: https://flutterawesome.com/a-new-open-source-flutter-login-home-animation/
 class FormContainer extends StatelessWidget {
+  final TextEditingController userTxtController;
+  final TextEditingController passTxtController;
+
+  FormContainer(this.userTxtController, this.passTxtController);
+
   @override
   Widget build(BuildContext context) {
     return (new Container(
@@ -14,15 +19,15 @@ class FormContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               new InputFieldArea(
-                hint: "Username",
-                obscure: false,
-                icon: Icons.person_outline,
-              ),
+                  hint: "Username",
+                  obscure: false,
+                  icon: Icons.person_outline,
+                  controller: userTxtController),
               new InputFieldArea(
-                hint: "Password",
-                obscure: true,
-                icon: Icons.lock_outline,
-              ),
+                  hint: "Password",
+                  obscure: true,
+                  icon: Icons.lock_outline,
+                  controller: passTxtController),
             ],
           )),
         ],
@@ -35,8 +40,9 @@ class InputFieldArea extends StatelessWidget {
   final String hint;
   final bool obscure;
   final IconData icon;
+  final TextEditingController controller;
 
-  InputFieldArea({this.hint, this.obscure, this.icon});
+  InputFieldArea({this.hint, this.obscure, this.icon, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +56,7 @@ class InputFieldArea extends StatelessWidget {
         ),
       ),
       child: new TextFormField(
+        controller: controller,
         obscureText: obscure,
         style: const TextStyle(
           color: Colors.purple,
