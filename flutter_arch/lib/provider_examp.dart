@@ -30,13 +30,6 @@ class ProviderExamplePage extends StatefulWidget {
 }
 
 class _ProviderExamplePageState extends State<ProviderExamplePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +74,10 @@ class ResultWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("ProgressWidget");
+    return Padding(
+      padding: const EdgeInsets.only(top: 12.0),
+      child: Text("Result: " + "OK"),
+    );
   }
 }
 
@@ -89,7 +85,7 @@ class ProgressWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("ProgressWidget");
+    return Text("");
   }
 }
 
