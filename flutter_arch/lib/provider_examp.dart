@@ -1,5 +1,25 @@
 import 'package:flutter/material.dart';
 
+class UserLogin with ChangeNotifier {
+  String _user;
+  String get user => _user;
+
+  String _pass;
+  String get pass => _pass;
+
+  bool _result = false;
+  bool get result => _result;
+
+  void checkCredentials(String user, String password) {
+    _user = user;
+    _pass = password;
+
+    // implement user/pass check
+    _result = true;
+    notifyListeners();
+  }
+}
+
 class ProviderExamplePage extends StatefulWidget {
   ProviderExamplePage({Key key, this.title}) : super(key: key);
 
@@ -28,16 +48,36 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('You have pushed the button this many times:'),
-            Text('$_counter', style: Theme.of(context).textTheme.display1),
+            LoginWidget(),
+            ResultWidget(),
+            ProgressWidget()
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+class LoginWidget extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Text("LoginWidget");
+  }
+}
+
+class ResultWidget extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Text("ProgressWidget");
+  }
+}
+
+class ProgressWidget extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Text("ProgressWidget");
   }
 }
