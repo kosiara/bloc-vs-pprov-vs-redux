@@ -20,7 +20,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
           FormContainer(userTxtController, passTxtController),
           Padding(
             padding: const EdgeInsets.only(top: 25.0),
-            child: SignInButton(),
+            child: SignInButton(onSignIn),
           )
         ],
       ),
@@ -32,5 +32,9 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
     userTxtController.dispose();
     passTxtController.dispose();
     super.dispose();
+  }
+
+  void onSignIn() {
+     print("Clicked");
   }
 }
