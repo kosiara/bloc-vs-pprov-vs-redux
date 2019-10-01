@@ -1,5 +1,9 @@
-import 'package:flutter/material.dart';
+import 'dart:developer';
 
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+// 0: create model class which extends ChangeNotifier
 class UserLogin with ChangeNotifier {
   String _user;
   String get user => _user;
@@ -33,18 +37,24 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            LoginWidget(),
-            ResultWidget(),
-            ProgressWidget()
-          ],
+    // 1: provide state
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(builder: (context) => UserLogin())
+      ],
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              LoginWidget(),
+              ResultWidget(),
+              ProgressWidget()
+            ],
+          ),
         ),
       ),
     );
