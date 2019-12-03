@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch/provider_examp.dart';
+import 'package:flutter_arch/arch/provider_examp.dart';
 
 class ArchApp extends StatelessWidget {
   // This widget is the root of your application.
