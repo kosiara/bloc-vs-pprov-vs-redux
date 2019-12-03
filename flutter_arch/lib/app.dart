@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_arch/arch/provider_examp.dart';
+import 'package:flutter_arch/arch/redux/page/page_redux.dart';
 
 class ArchApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -10,7 +11,10 @@ class ArchApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ProviderExamplePage(title: 'Architecture Comparison Demo'),
+      home:
+        //ProviderExamplePage(title: 'Provider: Architecture Comparison Demo'),
+        ReduxExamplePage(title: 'Redux: Architecture Comparison Demo'),
+
     );
   }
 }
