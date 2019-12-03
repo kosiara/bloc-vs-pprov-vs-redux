@@ -18,7 +18,10 @@ class UserLogin with ChangeNotifier {
     _user = user;
     _pass = password;
 
-    if (user != null && user.isNotEmpty && password != null && password.isNotEmpty) {
+    if (user != null &&
+        user.isNotEmpty &&
+        password != null &&
+        password.isNotEmpty) {
       _result = true;
       // user/pass check goes here
     } else
@@ -50,7 +53,11 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[LoginFormWidget(), ResultWidget(), ProgressWidget()],
+            children: <Widget>[
+              LoginFormWidget(),
+              ResultWidget(),
+              ProgressWidget()
+            ],
           ),
         ),
       ),
