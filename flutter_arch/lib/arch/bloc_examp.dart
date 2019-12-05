@@ -31,16 +31,16 @@ class UserLogin with ChangeNotifier {
   }
 }
 
-class ProviderExamplePage extends StatefulWidget {
-  ProviderExamplePage({Key key, this.title}) : super(key: key);
+class BlocExamplePage extends StatefulWidget {
+  BlocExamplePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _ProviderExamplePageState createState() => _ProviderExamplePageState();
+  _BlocExamplePageState createState() => _BlocExamplePageState();
 }
 
-class _ProviderExamplePageState extends State<ProviderExamplePage> {
+class _BlocExamplePageState extends State<BlocExamplePage> {
   @override
   Widget build(BuildContext context) {
     // 1: provide state
@@ -54,7 +54,7 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              LoginFormWidget(null),
+              LoginFormWidget(onSignIn),
               ResultWidget(),
               ProgressWidget()
             ],
@@ -62,6 +62,13 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
         ),
       ),
     );
+  }
+
+  void onSignIn(String user, String password, BuildContext context) {
+//    final userLogin = Provider.of<UserLogin>(context);
+//    userLogin.checkCredentials(
+//        user, password);
+    print("Sign-in clicked");
   }
 }
 

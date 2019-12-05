@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_arch/arch/bloc_examp.dart';
 import 'package:flutter_arch/arch/provider_examp.dart';
 import 'package:flutter_arch/arch/redux/page/page_redux.dart';
 
@@ -13,7 +14,8 @@ class ArchApp extends StatelessWidget {
       ),
       home:
         //ProviderExamplePage(title: 'Provider: Architecture Comparison Demo'),
-        ReduxExamplePage(title: 'Redux: Architecture Comparison Demo'),
+        BlocExamplePage(title: 'Provider: Architecture Comparison Demo'),
+        //ReduxExamplePage(title: 'Redux: Architecture Comparison Demo'),
 
     );
   }
