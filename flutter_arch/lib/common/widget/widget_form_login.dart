@@ -5,6 +5,11 @@ import 'package:flutter_arch/arch/provider_examp.dart';
 import 'package:provider/provider.dart';
 
 class LoginFormWidget extends StatefulWidget {
+
+  Function(String user, String password, BuildContext context) onSignIn;
+
+  LoginFormWidget(this.onSignIn);
+
   @override
   _LoginFormWidgetState createState() => _LoginFormWidgetState();
 }
@@ -22,7 +27,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
           FormContainer(userTxtController, passTxtController),
           Padding(
             padding: const EdgeInsets.only(top: 25.0),
-            child: SignInButton(onSignIn),
+            child: SignInButton(() => widget.onSignIn(userTxtController.value.text, passTxtController.value.text, context)),
           )
         ],
       ),
@@ -34,12 +39,5 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
     userTxtController.dispose();
     passTxtController.dispose();
     super.dispose();
-  }
-
-  void onSignIn() {
-    final userLogin = Provider.of<UserLogin>(context);
-    userLogin.checkCredentials(
-        userTxtController.value.text, passTxtController.value.text);
-    print("Sign-in clicked");
   }
 }

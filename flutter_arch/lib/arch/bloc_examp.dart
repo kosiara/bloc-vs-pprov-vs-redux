@@ -54,7 +54,7 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              LoginFormWidget(),
+              LoginFormWidget(null),
               ResultWidget(),
               ProgressWidget()
             ],

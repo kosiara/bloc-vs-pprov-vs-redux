@@ -54,7 +54,7 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              LoginFormWidget(),
+              LoginFormWidget(onSignIn),
               ResultWidget(),
               ProgressWidget()
             ],
@@ -62,6 +62,13 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
         ),
       ),
     );
+  }
+
+  void onSignIn(String user, String password, BuildContext context) {
+    final userLogin = Provider.of<UserLogin>(context);
+    userLogin.checkCredentials(
+        user, password);
+    print("Sign-in clicked");
   }
 }
 

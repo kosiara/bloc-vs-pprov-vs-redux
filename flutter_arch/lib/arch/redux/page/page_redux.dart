@@ -22,7 +22,7 @@ class _ReduxExamplePageState extends State<ReduxExamplePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              LoginFormWidget(),
+              LoginFormWidget(null),
               ResultWidget(),
               ProgressWidget()
             ],
