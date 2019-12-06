@@ -13,8 +13,8 @@ class ArchApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home:
-        //ProviderExamplePage(title: 'Provider: Architecture Comparison Demo'),
-        BlocExamplePage(title: 'Provider: Architecture Comparison Demo'),
+        ProviderExamplePage(title: 'Provider: Architecture Comparison Demo'),
+        //BlocExamplePage(title: 'Provider: Architecture Comparison Demo'),
         //ReduxExamplePage(title: 'Redux: Architecture Comparison Demo'),
 
     );

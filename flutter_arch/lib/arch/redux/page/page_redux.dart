@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_arch/arch/redux/actions/actions.dart';
+import 'package:flutter_arch/arch/redux/model/app_state.dart';
 import 'package:flutter_arch/common/widget/widget_form_login.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 class ReduxExamplePage extends StatefulWidget {
   ReduxExamplePage({Key key, this.title}) : super(key: key);
@@ -22,13 +25,17 @@ class _ReduxExamplePageState extends State<ReduxExamplePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              LoginFormWidget(null),
+              LoginFormWidget(onSignIn),
               ResultWidget(),
               ProgressWidget()
             ],
           ),
         ),
       );
+  }
+
+  void onSignIn(String user, String password, BuildContext context) {
+    StoreProvider.of<AppState>(context).dispatch(LoginRequestAction(user, password));
   }
 }
 
