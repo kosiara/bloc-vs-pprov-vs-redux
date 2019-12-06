@@ -9,21 +9,21 @@ class FormContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (new Container(
-      margin: new EdgeInsets.symmetric(horizontal: 20.0),
-      child: new Column(
+    return (Container(
+      margin: EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          new Form(
-              child: new Column(
+          Form(
+              child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new InputFieldArea(
+              InputFieldArea(
                   hint: "Username",
                   obscure: false,
                   icon: Icons.person_outline,
                   controller: userTxtController),
-              new InputFieldArea(
+              InputFieldArea(
                   hint: "Password",
                   obscure: true,
                   icon: Icons.lock_outline,
@@ -46,23 +46,23 @@ class InputFieldArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (new Container(
-      decoration: new BoxDecoration(
-        border: new Border(
-          bottom: new BorderSide(
+    return (Container(
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
             width: 0.5,
             color: Colors.deepPurpleAccent,
           ),
         ),
       ),
-      child: new TextFormField(
+      child: TextFormField(
         controller: controller,
         obscureText: obscure,
         style: const TextStyle(
           color: Colors.purple,
         ),
-        decoration: new InputDecoration(
-          icon: new Icon(
+        decoration: InputDecoration(
+          icon: Icon(
             icon,
             color: Colors.purple,
           ),

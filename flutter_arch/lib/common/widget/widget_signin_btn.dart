@@ -13,13 +13,13 @@ class SignInButton extends StatelessWidget {
         width: 320.0,
         height: 60.0,
         alignment: FractionalOffset.center,
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           color: const Color.fromRGBO(247, 64, 106, 1.0),
-          borderRadius: new BorderRadius.all(const Radius.circular(30.0)),
+          borderRadius: BorderRadius.all(const Radius.circular(30.0)),
         ),
-        child: new Text(
+        child: Text(
           "Sign In",
-          style: new TextStyle(
+          style: TextStyle(
             color: Colors.white,
             fontSize: 20.0,
             fontWeight: FontWeight.w300,
