@@ -13,7 +13,7 @@ List<Middleware<AppState>> createStoreLoginMiddleware() {
 Middleware<AppState> _createLoginUser() {
   return (Store<AppState> store, action, NextDispatcher next) {
     if (action is LoginRequestAction) {
-      next(LoginSuccessfulAction(UserLogin("Myszka", "Mickey")));
+      next(LoginSuccessfulAction(UserLogin(action.username, action.password)));
       return;
     }
 

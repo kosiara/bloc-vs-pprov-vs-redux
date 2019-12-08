@@ -35,6 +35,8 @@ class _ReduxExamplePageState extends State<ReduxExamplePage> {
   }
 
   void onSignIn(String user, String password, BuildContext context) {
-    StoreProvider.of<AppState>(context).dispatch(LoginRequestAction(user, password));
+    setState(() {
+      StoreProvider.of<AppState>(context).dispatch(LoginRequestAction(user, password));
+    });
   }
 }
