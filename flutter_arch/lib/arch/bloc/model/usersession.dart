@@ -11,10 +11,13 @@ class UserSession extends UserAuthenticationState {
   UserSession(this.login, this.token);
 }
 
+@immutable
 class UserAuthenticationLoading extends UserAuthenticationState {}
 
+@immutable
 class UserSignedOff extends UserAuthenticationState {}
 
+@immutable
 class UserUnauthenticated extends UserAuthenticationState {
   final String user;
   final Exception exception;
