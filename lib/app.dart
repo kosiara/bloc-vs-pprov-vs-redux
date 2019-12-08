@@ -12,7 +12,7 @@ import 'package:redux/redux.dart';
 /// Uncomment
 /// a) 'ProviderExamplePage'
 /// b) 'BlocExamplePage'
-/// c) 'ProviderExamplePage'
+/// c) 'ReduxExamplePage'
 ///
 /// to showcase specific architecture example
 ///
