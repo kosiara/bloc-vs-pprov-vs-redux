@@ -4,7 +4,7 @@ import 'package:flutter_arch/common/widget/widget_signin_btn.dart';
 
 class LoginFormWidget extends StatefulWidget {
 
-  Function(String user, String password, BuildContext context) onSignIn;
+  final Function(String user, String password, BuildContext context) onSignIn;
 
   LoginFormWidget(this.onSignIn);
 

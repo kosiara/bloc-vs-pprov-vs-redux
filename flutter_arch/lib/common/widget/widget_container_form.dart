@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
+//
+// This widget is open-source and was taken from flutterawesome
+//
 // source: https://flutterawesome.com/a-new-open-source-flutter-login-home-animation/
+//         https://github.com/GeekyAnts/flutter-login-home-animation
+// license: Apache License, Version 2.0
+//
 class FormContainer extends StatelessWidget {
   final TextEditingController userTxtController;
   final TextEditingController passTxtController;

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
+//
+// This widget is open-source and was taken from flutterawesome
+//
 // source: https://flutterawesome.com/a-new-open-source-flutter-login-home-animation/
+//         https://github.com/GeekyAnts/flutter-login-home-animation
+// license: Apache License, Version 2.0
+//
 class SignInButton extends StatelessWidget {
-  Function onSingInClickListener;
+  final Function onSingInClickListener;
 
-  SignInButton(Function this.onSingInClickListener);
+  SignInButton(this.onSingInClickListener);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
