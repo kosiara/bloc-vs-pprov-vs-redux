@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch/arch/provider_examp.dart';
+import 'package:flutter_arch/arch/provider/provider_examp.dart';
 import 'package:flutter_arch/arch/bloc/bloc_examp.dart';
 import 'package:flutter_arch/arch/redux/page/page_redux.dart';
 import 'package:flutter_arch/arch/redux/middleware/store_login_middleware.dart';
