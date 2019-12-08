@@ -18,3 +18,4 @@ login** flow to demonstrate how specific Flutter architectures behave.
     
 #### User interface
 
+<img src="./screenshot/login_positive.gif" width="242" >
