@@ -10,10 +10,9 @@ List<Middleware<AppState>> createStoreLoginMiddleware() {
 }
 
 /// connects to backend API to authorize the user
-Middleware<AppState> _createLoginUser(/*LoginRepository loginRepository*/) {
+Middleware<AppState> _createLoginUser() {
   return (Store<AppState> store, action, NextDispatcher next) {
     if (action is LoginRequestAction) {
-      // final val user = loginRepository.loginUser();
       next(LoginSuccessfulAction(UserLogin("Myszka", "Mickey")));
       return;
     }

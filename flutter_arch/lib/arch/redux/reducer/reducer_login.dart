@@ -4,7 +4,7 @@ import 'package:redux/redux.dart';
 
 final loginReducer = combineReducers<UserLogin>([
   TypedReducer<UserLogin, LoginSuccessfulAction>(_setUser),
-  // hint: other reducers go here
+  // hint: other type reducers go here
 ]);
 
 UserLogin _setUser(UserLogin user, LoginSuccessfulAction action) {

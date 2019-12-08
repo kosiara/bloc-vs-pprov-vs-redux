@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_arch/arch/redux/actions/actions.dart';
 import 'package:flutter_arch/arch/redux/model/app_state.dart';
+import 'package:flutter_arch/arch/redux/widget/widget_result.dart';
 import 'package:flutter_arch/common/widget/widget_form_login.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -27,7 +28,6 @@ class _ReduxExamplePageState extends State<ReduxExamplePage> {
             children: <Widget>[
               LoginFormWidget(onSignIn),
               ResultWidget(),
-              ProgressWidget()
             ],
           ),
         ),
@@ -36,28 +36,5 @@ class _ReduxExamplePageState extends State<ReduxExamplePage> {
 
   void onSignIn(String user, String password, BuildContext context) {
     StoreProvider.of<AppState>(context).dispatch(LoginRequestAction(user, password));
-  }
-}
-
-class ResultWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-     final resultWidget = true ? Text("Result: " + (true ? "OK" : "WRONG"))
-          : Text("");
-      return Padding(
-        padding: const EdgeInsets.only(top: 12.0),
-        child: resultWidget,
-      );
-  }
-}
-
-class ProgressWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-//    final userLogin = Provider.of<UserLogin>(context);
-//    String log = "";
-//    if (userLogin.result != null && userLogin.result)
-//      log = "Logging in: ${userLogin.user}";
-    return Text("aaa"); //Text(log);
   }
 }

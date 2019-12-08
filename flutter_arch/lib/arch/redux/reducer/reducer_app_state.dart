@@ -5,6 +5,6 @@ import 'package:flutter_arch/arch/redux/reducer/reducer_login.dart';
 AppState appReducer(AppState state, action) {
   return AppState(
     loggedUser: loginReducer(state.loggedUser, action),
-    // TODO: add other reducers here
+    // hint: other reducers go here
   );
 }
