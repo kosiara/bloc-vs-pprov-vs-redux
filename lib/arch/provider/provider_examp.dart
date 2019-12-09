@@ -19,7 +19,10 @@ class _ProviderExamplePageState extends State<ProviderExamplePage> {
   Widget build(BuildContext context) {
 
     return MultiProvider(
-      providers: [ChangeNotifierProvider(builder: (context) => UserLogin())],
+      providers: [
+        ChangeNotifierProvider(builder: (context) => UserLogin()),
+        //hint: other providers go here
+      ],
       child: Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
